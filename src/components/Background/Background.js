@@ -1,8 +1,25 @@
 import React, { Fragment } from "react";
 import styled from 'styled-components';
+import img from '../../assets/connected-dots.png'
+
+
+const StyledImg = styled.img`
+  transform: translate(500px, 100px);
+  width: 80%;
+  position: absolute;
+  right:0;
+  bottom: 0;
+  @media only screen and (max-width: 1024px){
+    display: none;
+  }
+`
 
 const BackgroundStyled = styled.div`
-    z-index: -1000;
+width: 100vw;
+height: 100vh;
+z-index: -100;
+overflow: hidden;
+position: absolute;
   background: rgb(11, 108, 80);
   background: -moz-linear-gradient(
     172deg,
@@ -26,6 +43,7 @@ const Background = (props) => {
   
   return (
   <BackgroundStyled>
+  <StyledImg src={img}/>
     {props.children}
   </BackgroundStyled>
   )

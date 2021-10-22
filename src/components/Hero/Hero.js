@@ -8,6 +8,9 @@ const HeroStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: 1024px){
+    flex-direction: column;
+  }
 `
 
 const Hero = props => {

@@ -8,31 +8,42 @@ import {
   AiFillTwitterCircle,
 } from "react-icons/ai"
 
-const Column = styled.div``
+const Column = styled.div`
+@media only screen and (min-width: 1024){
+  min-width: 50%;
+}
+
+`
 
 const Row = styled.div`
   margin: 30px 0;
 `
 
 const MainTitle = styled.h1`
-  width: 650px;
+
+@media only screen and (max-width: 1024px){
+  text-align: center;
+}
   font-weight: 800;
   font-size: 80px;
   color: white;
 `
 
 const TextStyled = styled.p`
-  width: 600px;
+@media only screen and (max-width: 1024px){
+  text-align: center;
+}
   color: white;
   font-size: 50px;
   font-weight: 800;
 `
 const SubTextStyled = styled.p`
-  width: 800px;
-  width: 590px;
   font-weight: 100;
   color: white;
   font-size: 18px;
+  @media only screen and (max-width: 1024px){
+  text-align: center;
+}
 `
 
 

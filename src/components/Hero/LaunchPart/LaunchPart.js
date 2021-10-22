@@ -3,6 +3,9 @@ import styled from 'styled-components'
 
 
 const Column = styled.div`
+  @media only screen and (min-width: 1024){
+  min-width: 50%;
+}
 `
 
 const Row = styled.div`
@@ -11,7 +14,7 @@ const Row = styled.div`
 `
 const RowTimer = styled.div`
 display: flex;
-margin: 30px 0;
+margin: 5px 0;
 
 justify-content: space-between;
 align-items: center;
@@ -26,7 +29,6 @@ const RowBar = styled.div`
 `
 
 const Filler = styled.div`
-width: 80%;
   height: 30px;
   background-color: #00ff1e;
 `
@@ -55,7 +57,11 @@ const Timer = styled.div`
 justify-content: space-between ;
 align-items: center;
 `
+const YourStyled = styled.span`
+  font-weight: 800;
+  font-size: 50px;
 
+`
 
 const LaunchPart = (props) => {  
 
@@ -63,12 +69,11 @@ const LaunchPart = (props) => {
   const [timerHours, setTimerHours] = useState('00')
   const [timerMinutes, setTimerMinutes] = useState('00')
   const [timerSeconds, setTimerSeconds] = useState('00')
-  
-  let interval = useRef()
 
+
+  let interval = useRef()
   const startTimer = () => {
     let countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
-
     interval = setInterval(() => {
       let now = new Date().getTime();
       let distance = countDownDate - now;
@@ -86,7 +91,6 @@ const LaunchPart = (props) => {
       }
     }, 1000)
   }
-
   useEffect(() => {
     startTimer();
     return() => {}
@@ -95,7 +99,7 @@ const LaunchPart = (props) => {
 
   return (
   <Column>
-    <Row><Title>YOUR <TitleColored>public sale launching</TitleColored> in:</Title> </Row>
+    <Row><Title><YourStyled>YOUR </YourStyled><TitleColored>public sale launching</TitleColored> in:</Title> </Row>
     <RowTimer>
       <Timer>
         <CounterNumber>{timerDays}</CounterNumber>
@@ -120,4 +124,5 @@ const LaunchPart = (props) => {
   </Column>
   )
 }
+
 export default LaunchPart
