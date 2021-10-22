@@ -1,6 +1,6 @@
 export const countDown = () => {
     let now = new Date().getTime();
-    let countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+    let countDownDate = new Date("Dec 31, 2021 00:00:00").getTime();
 
     let distance = countDownDate - now;
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
