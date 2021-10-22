@@ -1,5 +1,6 @@
-import React, { Fragment } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from 'styled-components'
+
 
 const Column = styled.div`
 `
@@ -56,26 +57,60 @@ align-items: center;
 `
 
 
-const LaunchPart = (props) => {
+const LaunchPart = (props) => {  
+
+  const [timerDays, setTimerDays] = useState('00')
+  const [timerHours, setTimerHours] = useState('00')
+  const [timerMinutes, setTimerMinutes] = useState('00')
+  const [timerSeconds, setTimerSeconds] = useState('00')
   
+  let interval = useRef()
+
+  const startTimer = () => {
+    let countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+
+    interval = setInterval(() => {
+      let now = new Date().getTime();
+      let distance = countDownDate - now;
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      if (distance < 0){
+        clearInterval()
+      } else {
+        setTimerDays(days)
+        setTimerHours(hours)
+        setTimerMinutes(minutes)
+        setTimerSeconds(seconds)
+      }
+    }, 1000)
+  }
+
+  useEffect(() => {
+    startTimer();
+    return() => {}
+  })
+
+
   return (
   <Column>
     <Row><Title>YOUR <TitleColored>public sale launching</TitleColored> in:</Title> </Row>
     <RowTimer>
       <Timer>
-        <CounterNumber>34</CounterNumber>
+        <CounterNumber>{timerDays}</CounterNumber>
         <CounterText>DAYS</CounterText>
       </Timer>
       <Timer>
-        <CounterNumber>01</CounterNumber>
+        <CounterNumber>{timerHours}</CounterNumber>
         <CounterText>HOURS</CounterText>
       </Timer>
       <Timer>
-        <CounterNumber>38</CounterNumber>
+      <CounterNumber>{timerMinutes}</CounterNumber>
         <CounterText>MINUTES</CounterText>
       </Timer>
       <Timer>
-        <CounterNumber>04</CounterNumber>
+        <CounterNumber>{timerSeconds}</CounterNumber>
         <CounterText>SECONDS</CounterText>
       </Timer>
     </RowTimer>
