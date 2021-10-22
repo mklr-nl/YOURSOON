@@ -1,5 +1,5 @@
 import * as React from "react"
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import {createGlobalStyle} from 'styled-components'
 import img from '../assets/connected-dots.png'
 import styled from 'styled-components'
