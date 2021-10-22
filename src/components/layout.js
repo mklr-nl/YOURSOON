@@ -3,8 +3,6 @@ import styled from 'styled-components'
 
 import {Header} from './Header'
 import {Hero} from './Hero'
-import {Background} from './Background'
-import {countDown} from '../helpers/countdown'
 
 const LayoutStyled = styled.div`
   width: 90%;
@@ -12,7 +10,6 @@ const LayoutStyled = styled.div`
 `
 
 const Layout = (props) => {
-  countDown()
   return (
       <LayoutStyled>
       <Header />
