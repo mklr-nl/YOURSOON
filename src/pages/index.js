@@ -47,11 +47,11 @@ const StyledImg = styled.img`
 
 
 const IndexPage = () => (
-  <React.Suspense>
+  <>
   <StyledImg src={img}/>
   <GlobalStyle/>
   <Layout />
-  </React.Suspense>
+  </>
 )
 
 export default IndexPage
