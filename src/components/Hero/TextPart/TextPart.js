@@ -9,9 +9,8 @@ import {
 } from "react-icons/ai"
 
 const Column = styled.div`
-@media only screen and (min-width: 1024){
-  min-width: 50%;
-}
+min-width: 30%;
+max-width: 46%;
 
 `
 
@@ -48,7 +47,7 @@ const SubTextStyled = styled.p`
 
 
 const Button = styled(motion.button)`
-  background-color: #f33232;
+  background-color: #f24f00;
   color: white;
   border-radius: 20px;
   font-weight: 800;

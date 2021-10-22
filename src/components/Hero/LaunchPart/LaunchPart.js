@@ -3,9 +3,7 @@ import styled from 'styled-components'
 
 
 const Column = styled.div`
-  @media only screen and (min-width: 1024){
-  min-width: 50%;
-}
+min-width: 30%;
 `
 
 const Row = styled.div`
@@ -14,8 +12,6 @@ const Row = styled.div`
 `
 const RowTimer = styled.div`
 display: flex;
-margin: 5px 0;
-
 justify-content: space-between;
 align-items: center;
 `
@@ -31,6 +27,7 @@ const RowBar = styled.div`
 const Filler = styled.div`
   height: 30px;
   background-color: #00ff1e;
+  width: 80%;
 `
 
 const Title = styled.p`
@@ -38,22 +35,24 @@ color: white;
 font-size: 50px;
 `
 const TitleColored = styled.span`
-  background: #f33232;
+  background: #f24f00;
   font-size: 50px;
   padding: 0 10px 5px 10px;
 `
 
 const CounterNumber = styled.p`
   color: white;
-font-size: 24px;
+font-size: 35px;
+margin-bottom: 15px;
 `
 
 const CounterText = styled.p`
 color: white;
-font-size: 24px;
 `
 
 const Timer = styled.div`
+display: flex;
+flex-direction: column;
 justify-content: space-between ;
 align-items: center;
 `
@@ -84,10 +83,27 @@ const LaunchPart = (props) => {
       if (distance < 0){
         clearInterval()
       } else {
-        setTimerDays(days)
-        setTimerHours(hours)
-        setTimerMinutes(minutes)
-        setTimerSeconds(seconds)
+        if(days < 10 ){
+          setTimerDays(`0 + ${days}`)
+        } else {
+          setTimerDays(days)
+        }
+        if(hours < 10 ){
+          setTimerHours(`0${hours}`)
+        } else {
+          setTimerHours(hours)
+
+        }
+        if(minutes < 10 ){
+          setTimerMinutes(`0${minutes}`)
+        } else {
+          setTimerMinutes(minutes)
+        }
+        if(seconds < 10 ){
+          setTimerSeconds(`0${seconds}`)
+        } else {
+          setTimerSeconds(seconds)
+        }
       }
     }, 1000)
   }
