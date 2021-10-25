@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import {Grid} from '../ui/Grid'
 
-const HeaderStyled = styled.header`
-  display: flex;
-  justify-content: center;
-  @media only screen and (min-width: 1024px){
-    justify-content: end;
-  }
-  align-items: center;
-`
+// const HeaderStyled = styled.header`
+//   display: flex;
+//   justify-content: center;
+//   @media only screen and (min-width: 1024px){
+//     justify-content: end;
+//   }
+//   align-items: center;
+// `
 
 const List = styled.ul`
+z-index: 1000;
+width: 100%;
   list-style: none;
   display: flex;
-  justify-content: space-between;
+   justify-content: space-between;
+   
   align-items: center;
 `
 
@@ -29,17 +33,16 @@ const ListItem = styled.li`
 const StyledSpan = styled.span`
   font-weight: 300;
   font-size: 2.4rem;
-  transform: translateY(-1000px);
 `
 const YourStyled = styled.span`
   font-weight: 800;
   font-size: 1.8rem;
-  transform: translateY(-1000px);
 `
 
 const Header = props => {
   return (
-    <HeaderStyled>
+    <Grid>
+      {/* <HeaderStyled> */}
         <List>
           <ListItem>
           <YourStyled>YOUR</YourStyled><StyledSpan>content</StyledSpan>
@@ -55,7 +58,8 @@ const Header = props => {
           </ListItem>
         </List>
         {/* <Button>whitepaper</Button> */}
-    </HeaderStyled>
+    {/* </HeaderStyled> */}
+    </Grid>
   )
 }
 

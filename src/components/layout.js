@@ -20,8 +20,8 @@ const GlobalStyle = createGlobalStyle`
  ` 
 
 const LayoutStyled = styled.div`
-    width: 90%;
-  margin: 0 auto;
+    /* width: 90%;
+  margin: 0 auto; */
 `
 
 const Layout = (props) => {

@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai"
 
 const Column = styled.div`
+z-index: 1000;
 min-width: 30%;
 max-width: 46%;
 

@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import styled from 'styled-components';
 import img from '../../assets/connected-dots.png'
+import ParticalsUnit from './ParticalsUnit'
 
 
 const StyledImg = styled.img`
@@ -17,7 +18,6 @@ const StyledImg = styled.img`
 const BackgroundStyled = styled.div`
 width: 100vw;
 height: 100vh;
-z-index: -100;
 overflow: hidden;
 position: absolute;
   background: rgb(11, 108, 80);
@@ -37,14 +37,16 @@ position: absolute;
     rgba(0, 26, 20, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b6c50",endColorstr="#001a14",GradientType=1);
+
 `
 
 const Background = (props) => {
   
   return (
   <BackgroundStyled>
-  <StyledImg src={img}/>
-    {props.children}
+  <ParticalsUnit/>
+  {/* <StyledImg src={img}/>
+    {props.children} */}
   </BackgroundStyled>
   )
 }
