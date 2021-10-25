@@ -1,64 +1,77 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import {Grid} from '../ui/Grid'
+import Column from "../ui/Grid/Column"
+import Row from '../ui/Grid/Row'
+import {GiHamburgerMenu} from 'react-icons/gi'
+import {GiTireIronCross} from 'react-icons/gi'
 
-// const HeaderStyled = styled.header`
-//   display: flex;
-//   justify-content: center;
-//   @media only screen and (min-width: 1024px){
-//     justify-content: end;
-//   }
-//   align-items: center;
-// `
-
-const List = styled.ul`
-z-index: 1000;
-width: 100%;
-  list-style: none;
-  display: flex;
-   justify-content: space-between;
-   
-  align-items: center;
+const ColumnLinks = styled.div`
+  z-index: 1000;
+  padding: 15px;
+  cursor: pointer;
+  @media only screen and (max-width: 850px){
+    display: none;
+}
+`
+const ColumnMenuIcon = styled.div`
+  z-index: 2000;
+  position: absolute;
+  padding: 15px;
+  top:0;
+  right: 0;
+@media only screen and (min-width: 850px){
+    display: none;
+}
 `
 
-const ListItem = styled.li`
-  cursor: pointer;
-  font-weight: 600;
-  margin: 0 5px;
-  font-size: 27px;
-  cursor: pointer;
+const BurgerIconStyled = styled(GiHamburgerMenu)`
   color: white;
+  font-size: 50px;
+  padding: 15px;
+
+`
+const CrossIconStyled = styled(GiTireIronCross)`
+  color: red;
+  font-size: 50px;
+  padding: 15px;
 `
 
 const StyledSpan = styled.span`
   font-weight: 300;
   font-size: 2.4rem;
+  color: white;
+
 `
 const YourStyled = styled.span`
   font-weight: 800;
   font-size: 1.8rem;
+  color: white;
+
 `
 
 const Header = props => {
+
+  const [showBurger, setShowBurger] = useState(true)
+
+  const clickHandler = () => {
+    setShowBurger(prevShowBurger => !prevShowBurger)
+    console.log('clicked')
+  }
   return (
-    <Grid>
-      {/* <HeaderStyled> */}
-        <List>
-          <ListItem>
-          <YourStyled>YOUR</YourStyled><StyledSpan>content</StyledSpan>
-          </ListItem>
-          <ListItem>
-            <YourStyled>YOUR</YourStyled><StyledSpan>buy</StyledSpan>
-          </ListItem>
-          <ListItem>
-          <YourStyled>YOUR</YourStyled><StyledSpan>token</StyledSpan>
-          </ListItem>
-          <ListItem>
-          <YourStyled>YOUR</YourStyled><StyledSpan>wallet</StyledSpan>
-          </ListItem>
-        </List>
-        {/* <Button>whitepaper</Button> */}
-    {/* </HeaderStyled> */}
+    <Grid display='none'>
+    <Row  justify='end'>
+      <ColumnLinks><YourStyled>YOUR</YourStyled><StyledSpan>content</StyledSpan></ColumnLinks>
+      <ColumnLinks><YourStyled>YOUR</YourStyled><StyledSpan>buy</StyledSpan></ColumnLinks>
+      <ColumnLinks><YourStyled>YOUR</YourStyled><StyledSpan>token</StyledSpan></ColumnLinks>
+      <ColumnLinks><YourStyled>YOUR</YourStyled><StyledSpan>wallet</StyledSpan></ColumnLinks>
+      <ColumnMenuIcon onClick={clickHandler}>
+      {showBurger ? 
+        <BurgerIconStyled/> :
+        <CrossIconStyled/>
+      }
+      </ColumnMenuIcon>
+      </Row>
     </Grid>
   )
 }

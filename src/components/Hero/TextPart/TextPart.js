@@ -10,8 +10,8 @@ import {
 
 const Column = styled.div`
 z-index: 1000;
-min-width: 30%;
-max-width: 46%;
+padding: 60px;
+
 
 `
 
@@ -21,18 +21,12 @@ const Row = styled.div`
 
 const MainTitle = styled.h1`
 
-@media only screen and (max-width: 1024px){
-  text-align: center;
-}
   font-weight: 800;
   font-size: 80px;
   color: white;
 `
 
 const TextStyled = styled.p`
-@media only screen and (max-width: 1024px){
-  text-align: center;
-}
   color: white;
   font-size: 50px;
   font-weight: 800;
@@ -41,9 +35,6 @@ const SubTextStyled = styled.p`
   font-weight: 100;
   color: white;
   font-size: 18px;
-  @media only screen and (max-width: 1024px){
-  text-align: center;
-}
 `
 
 

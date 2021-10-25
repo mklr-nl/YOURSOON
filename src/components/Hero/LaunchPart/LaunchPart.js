@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 
 const Column = styled.div`
-z-index: 1000;
-min-width: 30%;
+  z-index: 1000;
+  padding: 60px;
 `
 
 const Row = styled.div`

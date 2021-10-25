@@ -7,9 +7,13 @@ const HeroStyled = styled.div`
   height: 80vh;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  @media only screen and (min-width: 1024px){
+    align-items: center;
+  }
   @media only screen and (max-width: 1024px){
     flex-direction: column;
+    justify-content: space-around;
+
   }
 `
 

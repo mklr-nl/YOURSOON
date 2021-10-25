@@ -8,11 +8,7 @@ const Grid = props => {
   return (
     <Section>
       <Container>
-        <Row>
-            <Column>
-            </Column>
-            {props.children}
-        </Row>
+      {props.children}
       </Container>
     </Section>
   )
