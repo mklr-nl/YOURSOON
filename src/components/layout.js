@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body{
-    min-height: 100vh;
     box-sizing: border-box;
     font-family: 'proxima-nova', sans-serif;
     font-size: 16px;
@@ -27,11 +26,12 @@ const LayoutStyled = styled.div`
 const Layout = (props) => {
   return (
     <>
-    <Background/>
       <LayoutStyled>
-      <GlobalStyle/>      
-      <Header />
-      <Hero/>
+      <GlobalStyle/>     
+      <Background>
+        <Header />
+        <Hero/>
+      </Background> 
       </LayoutStyled>
       </>
   )

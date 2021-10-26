@@ -1,26 +1,19 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from 'styled-components'
+import Column from '../../ui/Grid/Column'
+import {Grid} from '../../ui/Grid'
+import Row from '../../ui/Grid/Row'
 
-
-const Column = styled.div`
-  z-index: 1000;
-  padding: 60px;
-`
-
-const Row = styled.div`
-    margin: 30px 0;
-
-`
 const RowTimer = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
+margin: 15px 0;
 `
 const RowBar = styled.div`
   height: 30px;
   background-color: white;
-  margin: 30px 0;
-
+  margin: 15px 0;
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
 `
@@ -115,7 +108,7 @@ const LaunchPart = (props) => {
 
 
   return (
-  <Column>
+  <Column column>
     <Row><Title><YourStyled>YOUR </YourStyled><TitleColored>public sale launching</TitleColored> in:</Title> </Row>
     <RowTimer>
       <Timer>

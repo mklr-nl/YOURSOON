@@ -6,9 +6,9 @@ import Column from "./Column"
 
 const Grid = props => {
   return (
-    <Section>
+    <Section margin={props.margin}>
       <Container>
-      {props.children}
+        <Row justify={props.justify}>{props.children}</Row>
       </Container>
     </Section>
   )

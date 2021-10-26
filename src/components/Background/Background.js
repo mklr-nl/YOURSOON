@@ -44,9 +44,9 @@ const Background = (props) => {
   
   return (
   <BackgroundStyled>
-  <ParticalsUnit/>
-  {/* <StyledImg src={img}/>
-    {props.children} */}
+    {props.children}
+    <ParticalsUnit/>
+
   </BackgroundStyled>
   )
 }

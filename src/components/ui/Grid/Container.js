@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import styled from 'styled-components'
 
 const ContainerStyled = styled.div`
-    max-width: 2500px;
+    max-width: 2000px;
     margin: 0 auto;
     @media only screen and (min-width: 1500px){
         width: 90%;
@@ -18,7 +18,7 @@ const ContainerStyled = styled.div`
 const Container = (props) => {
   
   return (
-    <ContainerStyled>
+    <ContainerStyled className ='container'>
         {props.children}    
   </ContainerStyled>
   )

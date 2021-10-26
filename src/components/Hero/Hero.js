@@ -2,27 +2,15 @@ import React, { Fragment } from "react"
 import styled from "styled-components"
 import { TextPart } from "./TextPart"
 import { LaunchPart } from "./LaunchPart"
+import {Grid} from '../ui/Grid'
 
-const HeroStyled = styled.div`
-  height: 80vh;
-  display: flex;
-  justify-content: space-between;
-  @media only screen and (min-width: 1024px){
-    align-items: center;
-  }
-  @media only screen and (max-width: 1024px){
-    flex-direction: column;
-    justify-content: space-around;
-
-  }
-`
 
 const Hero = props => {
   return (
-    <HeroStyled>
+    <Grid margin='100px' justify='space-between'>
       <TextPart />
       <LaunchPart />
-    </HeroStyled>
+    </Grid>
   )
 }
 export default Hero

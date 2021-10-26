@@ -7,17 +7,9 @@ import {
   AiFillInstagram,
   AiFillTwitterCircle,
 } from "react-icons/ai"
-
-const Column = styled.div`
-z-index: 1000;
-padding: 60px;
-
-
-`
-
-const Row = styled.div`
-  margin: 30px 0;
-`
+import Column from '../../ui/Grid/Column'
+import {Grid} from '../../ui/Grid'
+import Row from '../../ui/Grid/Row'
 
 const MainTitle = styled.h1`
 
@@ -59,7 +51,7 @@ const TextPart = (props) => {
     paddingRight: "15px",
   }
   return (
-    <Column>
+    <Column column maxwidth='50%'>
     <Row>
       <MainTitle>YOUR</MainTitle>
     </Row>
@@ -81,7 +73,7 @@ const TextPart = (props) => {
         Download whitepaper
       </Button>
     </Row>
-    <Row>
+    <Row  flex>
       <FaFacebook style={icon} />
       <AiFillGoogleCircle style={icon} />
       <AiFillTwitterCircle style={icon} />

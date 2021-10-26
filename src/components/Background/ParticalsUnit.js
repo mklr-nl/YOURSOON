@@ -3,8 +3,8 @@ import Particles from "react-tsparticles";
 import styled from 'styled-components'
 
 const BoxStyled = styled.div`
-  width: 300px;
-  height: 600px;
+  z-index: -10000;
+  margin-top: -300px;
 `
 
 
