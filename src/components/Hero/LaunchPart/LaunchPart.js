@@ -31,7 +31,7 @@ font-size: 50px;
 const TitleColored = styled.span`
   background: #f24f00;
   font-size: 50px;
-  padding: 0 10px 5px 10px;
+  padding: 0 0px 5px 0px;
 `
 
 const CounterNumber = styled.p`

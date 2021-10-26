@@ -7,19 +7,14 @@ import { GiHamburgerMenu } from "react-icons/gi"
 import { GiTireIronCross } from "react-icons/gi"
 
 const ColumnLinks = styled.div`
-  z-index: 1000000;
-  padding: 15px;
-  cursor: pointer;
+  padding: 0 15px;
+  pointer-events: none;
   @media only screen and (max-width: 850px) {
     display: none;
   }
 `
 const ColumnMenuIcon = styled.div`
   z-index: 2000;
-  position: absolute;
-  padding: 15px;
-  top: 0;
-  right: 0;
   @media only screen and (min-width: 850px) {
     display: none;
   }
@@ -28,23 +23,26 @@ const ColumnMenuIcon = styled.div`
 const BurgerIconStyled = styled(GiHamburgerMenu)`
   color: white;
   font-size: 50px;
-  padding: 15px;
+  cursor: pointer;
 `
 const CrossIconStyled = styled(GiTireIronCross)`
   color: red;
   font-size: 50px;
-  padding: 15px;
+  cursor: pointer;
 `
 
 const StyledSpan = styled.span`
   font-weight: 300;
   font-size: 2.4rem;
   color: white;
+  pointer-events: none;
 `
 const YourStyled = styled.span`
   font-weight: 800;
   font-size: 1.8rem;
   color: white;
+  pointer-events: none;
+
 `
 
 const Header = props => {
@@ -73,10 +71,10 @@ const Header = props => {
             <YourStyled>YOUR</YourStyled>
             <StyledSpan>wallet</StyledSpan>
           </ColumnLinks>
-        </Column>
         <ColumnMenuIcon onClick={clickHandler}>
           {showBurger ? <BurgerIconStyled /> : <CrossIconStyled />}
         </ColumnMenuIcon>
+        </Column>
     </Grid>
   )
 }
